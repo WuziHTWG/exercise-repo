@@ -1,0 +1,62 @@
+package build
+
+import mill.*
+import mill.scalalib.*
+
+object aufg8 extends ScalaModule:
+  def scalaVersion = "3.9.0"
+
+  def mvnDeps = Seq(
+    mvn"com.lihaoyi::os-lib:0.11.5"
+  )
+
+  object test extends ScalaTests with TestModule.Munit:
+    def mvnDeps = Seq(
+      mvn"org.scalameta::munit:1.1.1"
+    )
+object aufg7 extends ScalaModule:
+  def scalaVersion = "3.9.0"
+
+  def mvnDeps = Seq(
+    mvn"com.lihaoyi::os-lib:0.11.5"
+  )
+
+  object test extends ScalaTests with TestModule.Munit:
+    def mvnDeps = Seq(
+      mvn"org.scalameta::munit:1.1.1"
+    )
+
+object logicalTesting extends ScalaModule:
+  def scalaVersion = "3.9.0"
+
+  def mvnDeps = Seq(
+    mvn"com.lihaoyi::os-lib:0.11.5"
+  )
+
+  object test extends ScalaTests with TestModule.Munit:
+    def mvnDeps = Seq(
+      mvn"org.scalameta::munit:1.1.1"
+    )
+object aufg9 extends ScalaModule:
+  def scalaVersion = "3.9.0"
+
+  def mvnDeps = Seq(
+    mvn"com.lihaoyi::os-lib:0.11.5"
+  )
+  override def moduleDir = build.moduleDir / "scalasource" / "aufg9"
+
+  object test extends ScalaTests with TestModule.Munit:
+    def mvnDeps = Seq(
+      mvn"org.scalameta::munit:1.1.1"
+    )
+object digi2 extends ScalaModule:
+  def scalaVersion = "3.9.0"
+
+  def mvnDeps = Seq(
+    mvn"com.lihaoyi::os-lib:0.11.5"
+  )
+
+  object test extends ScalaTests with TestModule.Munit:
+    def mvnDeps = Seq(
+      mvn"org.scalameta::munit:1.1.1"
+    )
