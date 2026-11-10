@@ -14,6 +14,8 @@ object aufg8 extends ScalaModule:
     def mvnDeps = Seq(
       mvn"org.scalameta::munit:1.1.1"
     )
+  override def moduleDir = build.moduleDir / "scalasource" / "aufg8"
+  
 object aufg7 extends ScalaModule:
   def scalaVersion = "3.9.0"
 
@@ -25,6 +27,7 @@ object aufg7 extends ScalaModule:
     def mvnDeps = Seq(
       mvn"org.scalameta::munit:1.1.1"
     )
+  override def moduleDir = build.moduleDir / "scalasource" / "aufg7"
 
 object logicalTesting extends ScalaModule:
   def scalaVersion = "3.9.0"
@@ -37,6 +40,8 @@ object logicalTesting extends ScalaModule:
     def mvnDeps = Seq(
       mvn"org.scalameta::munit:1.1.1"
     )
+  override def moduleDir = build.moduleDir / "scalasource" / "logicalTesting"
+
 object aufg9 extends ScalaModule:
   def scalaVersion = "3.9.0"
 
@@ -60,3 +65,4 @@ object digi2 extends ScalaModule:
     def mvnDeps = Seq(
       mvn"org.scalameta::munit:1.1.1"
     )
+  override def moduleDir = build.moduleDir / "scalasource" / "digi2"
