@@ -4,9 +4,9 @@
   val tabletStorage = Storage[Tablet]()
   val bookStorage = Storage[Book]()
   val foodStorage = Storage[Food]()
-  var book = Book("Test", "Güther Güthersen", "Thriller")
+  var book2 = Book("Test", "Güther Güthersen", "Thriller")
   val laptop = Laptop("Giga Book", "MSI", "your MomS")
-  println(book)
+  println(book2)
   bookStorage.addItem(Book("Test", "Güther Güthersen", "Thriller"))
   laptopStorage.addItem(Laptop("Zenbook", "ASUS", "Duo 16 GB"))
   laptopStorage.addItem(Laptop("Zenbook", "ASUS", "Duo 32 GB"))
@@ -21,3 +21,4 @@
   println(laptopStorage.containedAmount(laptop))
   println(laptopStorage.getSize)
   println(laptopStorage.getContent.filter(laptop => laptop.name == "Zenbook").map(_.model))
+  var book = "Test"
