@@ -1,3 +1,15 @@
+#Metals / BSP / Bloop /VSCode
+
+.bsp/
+.bloop/
+.metals/
+.vscode/
+out/
+
+#Scala fmt
+.scalafmt.conf
+
+
 *.class
 *.tasty
 *.log
