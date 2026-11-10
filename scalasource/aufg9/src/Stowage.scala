@@ -13,6 +13,7 @@
   laptopStorage.addItem(Laptop("Zenbook", "ASUS", "Duo 64 GB"))
   laptopStorage.addItem(Laptop("Zenbook", "ASUS", "Duo 2TB"))
   println(bookStorage.getContent)
+  println(bookStorage.getContent)
   println(bookStorage.getSize)
   println(laptopStorage.containedAmount(laptop))
   println(laptopStorage.getSize)
