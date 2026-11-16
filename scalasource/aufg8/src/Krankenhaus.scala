@@ -1,4 +1,4 @@
-@main def hospital(): Unit =
+
   object Utils:
     def test(): Unit = ???
     def numberEnding(n: Int): String = (n % 10) match
@@ -35,6 +35,9 @@
     case lightlyRestricted
     case restricted
     case majorlyRestricted
+    
+  enum PersonalType:
+    case nurse, doctor
 
   import Utils.* // import of the Utils, needed in the classes
   import roomType.* // import of the Enums for easier use
@@ -56,16 +59,18 @@
     override def toString(): String = s"Room $roomNumber is a $rType Type and is ${
         if _occupied == true then "occupied" else "unoccupied"
       } it is the $_runningnumber${numberEnding(_runningnumber)} Room in the hospital"
+
   object Room:
     private var count = 0
     def runNumGenerator(): Int =
       count += 1
       count
 
-  class Personal(firstName: String, lastName: String):
+  class Personal(firstName: String, lastName: String, personalType: PersonalType):
     private var _name = (firstName, lastName)
     def name: String = _name.toString()
     def setName(s: String): Unit = _name = (s.split(' ').toList(0), s.split(' ').toList(1))
+    def pType: PersonalType = personalType
 
   case class Operations()
   object Operations // companion-object for operations
@@ -73,9 +78,9 @@
   class OngoingTreatment(
       val staff: Personal,
       val patient: Patient,
-      val Room: Room,
+      val room: Room,
       val treatment: treatmentType,
-      val Department: Department
+      val department: Department
   )
   object OngoingTreatment:
     def price(): Double = ???
@@ -90,6 +95,7 @@
     var ava: availability = available
     def used(i: Int): Int = stock - i
     def stocked(i: Int): Int = stock + i
+@main def hospital(): Unit =
 
   println(Room(regular, "O001"))
   println(Room(regular, "O002"))
