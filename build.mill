@@ -29,6 +29,21 @@ object aufg7 extends ScalaModule:
     )
   override def moduleDir = build.moduleDir / "scalasource" / "aufg7"
 
+object aufg13 extends ScalaModule:
+  def scalaVersion = "3.9.0"
+
+  def mvnDeps = Seq(
+    mvn"com.lihaoyi::os-lib:0.11.5",
+    mvn"org.typelevel::squants:1.8.3"
+  )
+
+  object test extends ScalaTests with TestModule.Munit:
+    def mvnDeps = Seq(
+      mvn"org.scalameta::munit:1.1.1",
+      mvn"org.typelevel::squants:1.8.3"
+    )
+  override def moduleDir = build.moduleDir / "scalasource" / "aufg13"
+
 object logicalTesting extends ScalaModule:
   def scalaVersion = "3.9.0"
 
