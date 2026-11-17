@@ -7,7 +7,7 @@ import scala.collection.mutable.Map
   */
 class PersonalRegistry (assignment: scala.collection.mutable.Map[Department, Set[Personal]]):
     /**  Adds a person to a department in the personal registry
-      *  @exemple:
+      *  @example:
       *  {{{
       *      assign(Person("Jane","Doe", nurse), physio)
       *  }}}
@@ -20,7 +20,7 @@ class PersonalRegistry (assignment: scala.collection.mutable.Map[Department, Set
         assignment(department) + person
     /** Retrieves assigned Personal in department
       *
-      * @exemple
+      * @example
       * {{{
       *     personalIn(physio) // Set(Personal("Jane", "Doe", nurse))
       * }}}
@@ -31,7 +31,7 @@ class PersonalRegistry (assignment: scala.collection.mutable.Map[Department, Set
         assignment.getOrElse(department, Set.empty[Personal])
     /**
       * Returns a tuple of Sets of Personal sorted for PersonalType
-      * @exemple
+      * @example
       * {{{
       *     typeOfPersonalIn(physio) // (Set(Personal("Jane", "Doe", nurse)), Set(Personal("John", "Doe", doctor)))
       * }}}
