@@ -35,7 +35,7 @@
     case lightlyRestricted
     case restricted
     case majorlyRestricted
-    
+
   enum PersonalType:
     case nurse, doctor
 
@@ -107,3 +107,4 @@
   val r = Room(icu, "O020")
   r.setStatus(true)
   println(r.occupied)
+  
