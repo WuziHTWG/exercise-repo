@@ -63,3 +63,5 @@ package billing:
             ((price * (Reading2.since(Reading1))).in(EUR) + baseFee.eur * 12).rounded(2)
         val PriceInEur = calcEnergyBillInEur(Reading(12400), Reading(15900), p, 12)
         val PriceInUSD = PriceInEur.in(USD)
+        println(PriceInUSD)
+        println(PriceInEur)
