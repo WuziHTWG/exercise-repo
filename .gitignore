@@ -5,6 +5,7 @@
 .metals/
 .vscode/
 out/
+scalasource/AiExperimente/
 
 #Scala fmt
 .scalafmt.conf
