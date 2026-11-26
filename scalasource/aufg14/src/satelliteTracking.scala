@@ -40,9 +40,6 @@ package ISS:
         R * c
 
     val distances: LazyList[Double] = iss.sliding(2).map(w => distance(w(0), w(1))).to(LazyList)
-     
-
-
 
 
 package HUBBLE: // Currently ISSUE with API, Worked Sat 21.11.26 befor 12:30, fixed trought other API
@@ -66,8 +63,8 @@ package HUBBLE: // Currently ISSUE with API, Worked Sat 21.11.26 befor 12:30, fi
 
 
 @main def start: Unit =
-    ISS.iss.zip(HUBBLE.hubble).take(10).foreach((iss, hubble)=> println("ISS Altitude: "+ iss.altitude + "\n"+ "Hubble Space Telescope Altitude: " +  hubble.altitude))
+    //ISS.iss.zip(HUBBLE.hubble).take(10).foreach((iss, hubble)=> println("ISS Altitude: "+ iss.altitude + "\n"+ "Hubble Space Telescope Altitude: " +  hubble.altitude))
     //ISS.iss.take(20).foreach(iss => println("ISS Altitude: " + BigDecimal(iss.altitude).setScale(7, BigDecimal.RoundingMode.HALF_UP).toString + " km"))
     //ISS.avAltitude.take(5).foreach(println)
     //ISS.avVelocity.take(5).foreach(println)
-    //ISS.iss.take(10).zip(ISS.distances).foreach((iss, distances) => println("ISS Geschwindigkeit: " + iss.velocity + " km/s\nBerechnete Distanz: "+ distances + " km in Readcycle (manchmal buggy) in sec"))
+    ISS.iss.take(10).zip(ISS.distances).foreach((iss, distances) => println("ISS Geschwindigkeit: " + iss.velocity + " km/s\nBerechnete Distanz: "+ distances + " km in Readcycle (manchmal buggy) in sec"))

@@ -22,12 +22,15 @@ package energy:
             def sec: Time = Seconds(d)
 
 package billing:
+    import squants.energy.MegawattHours
+    
     @main def main (): Unit = 
         // First und second sind selbst geschrieben
-        /*def first: Unit =
+        {
+        def first: Unit =
             import energy.Units.*
-            println((10.eur + eur(10)))
-            println(3500.MWh)
+            println(10.eur + eur(10))
+            println(3500.0.MWh)
             println((10.gW * 60.min).in(MegawattHours))
         first
         def second: Unit =
@@ -36,10 +39,12 @@ package billing:
             println(3500.KWH)
             println((10.GW * 60.min).in(MegawattHours))
         second
-        */
+        }
+
         import squants.market.* 
         import energy.Units.* 
         import squants.energy.{Energy, KilowattHours, MegawattHours}
+
         object Metering:
             opaque type Reading = Energy // inside Metering: Reading == Energy
             object Reading:
@@ -50,12 +55,13 @@ package billing:
                     def since(earlier: Reading): Energy = r - earlier
 
         import Metering.*
+        given MoneyContext(EUR, defaultCurrencySet, List(CurrencyExchangeRate(EUR(1), USD(1.10))))
         val jan = Reading(12_400)
         val dec = Reading(15_900)
         dec.since(jan)
         // Ende von Kopiertem Code
         val p: Price[Energy] = 0.35.usd / 1.kWh
-        given MoneyContext(EUR, defaultCurrencySet, List(CurrencyExchangeRate(EUR(1), USD(1.10))))
+        
         val usage = (2.gW * 30.min).in(MegawattHours)
         val baseFee = 12.eur * 12
         val total = ((p * usage).in(EUR) + baseFee).rounded(2)
